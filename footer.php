@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Basic_Underscores
+ * @package Nonprofit_Organization
  */
 
 ?>
@@ -15,9 +15,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'basic-underscores' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'basic-underscores' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nonprofit-org' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'nonprofit-org' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'basic-underscores' ), 'basic-underscores', '<a href="http://jacobgoh.com" rel="designer">Jacob Goh</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'nonprofit-org' ), 'nonprofit-org', '<a href="http://jacobgoh.com" rel="designer">Jacob Goh</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

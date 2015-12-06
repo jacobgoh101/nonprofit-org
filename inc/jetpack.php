@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package Basic_Underscores
+ * @package Nonprofit_Organization
  */
 
 /**
@@ -13,23 +13,23 @@
  * See: https://jetpack.me/support/infinite-scroll/
  * See: https://jetpack.me/support/responsive-videos/
  */
-function basic_underscores_jetpack_setup() {
+function nonprofit_org_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'basic_underscores_infinite_scroll_render',
+		'render'    => 'nonprofit_org_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
-} // end function basic_underscores_jetpack_setup
-add_action( 'after_setup_theme', 'basic_underscores_jetpack_setup' );
+} // end function nonprofit_org_jetpack_setup
+add_action( 'after_setup_theme', 'nonprofit_org_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function basic_underscores_infinite_scroll_render() {
+function nonprofit_org_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
@@ -38,4 +38,4 @@ function basic_underscores_infinite_scroll_render() {
 		    get_template_part( 'template-parts/content', get_post_format() );
 		endif;
 	}
-} // end function basic_underscores_infinite_scroll_render
+} // end function nonprofit_org_infinite_scroll_render

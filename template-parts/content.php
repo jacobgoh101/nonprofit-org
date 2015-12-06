@@ -4,50 +4,44 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Basic_Underscores
+ * @package Nonprofit_Organization
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php
+			if ( is_single() ) {
+				the_title( '<h1 class="entry-title">', '</h1>' );
+			} else {
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			}
 
-		<?php if ( has_post_thumbnail() ) { ?>
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail( ); ?>
-			</div>
-		<?php } ?>
-		
-		<?php if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php basic_underscores_posted_on(); ?>
+			<?php nonprofit_org_posted_on(); ?>
 		</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php
+		endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			if ( $post->post_excerpt ) {
-				the_excerpt();
-				echo sprintf( '<div class="continue_btn"><a href="%s" class="more-link" rel="bookmark">Continue Reading'.the_title( '<span class="screen-reader-text">"', '"</span>', false ).'</a></div>', esc_url(get_permalink()) );
-			} else {
-				the_content( sprintf(
-					__( 'Continue Reading %s', 'testtheme' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
-			}
-		?>
+			the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'nonprofit-org' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
 
-		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'basic-underscores' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nonprofit-org' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php basic_underscores_entry_footer(); ?>
+		<?php nonprofit_org_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

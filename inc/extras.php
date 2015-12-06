@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Basic_Underscores
+ * @package Nonprofit_Organization
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function basic_underscores_body_classes( $classes ) {
+function nonprofit_org_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,4 +26,4 @@ function basic_underscores_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'basic_underscores_body_classes' );
+add_filter( 'body_class', 'nonprofit_org_body_classes' );

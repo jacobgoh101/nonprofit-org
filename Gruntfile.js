@@ -1,4 +1,3 @@
-// npm install
 // npm install grunt-postcss pixrem autoprefixer cssnano
 
 module.exports = function(grunt) {

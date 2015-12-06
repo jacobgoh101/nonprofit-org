@@ -45,6 +45,7 @@ function nonprofit_org_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'nonprofit-org' ),
+		'top-menu' => esc_html__( 'Top Menu', 'nonprofit-org' ),
 	) );
 
 	/*
@@ -150,3 +151,16 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Custom Code starts here
+ */
+
+//Add google fonts
+function add_google_fonts() {
+
+wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600', false ); 
+}
+
+add_action( 'wp_enqueue_scripts', 'add_google_fonts' );

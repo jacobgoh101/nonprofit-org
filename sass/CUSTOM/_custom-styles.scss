@@ -1,0 +1,120 @@
+* {
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+body {
+	@include body();
+}
+
+@include links();
+
+// Overridden from lists.scss
+ul, ol {
+	padding: 0;
+	margin: 0 0 $phi*1em $phi*1em;
+}
+
+@include htags();
+
+
+/* Header */
+
+.site-branding{
+	float: left;
+	display: block;
+	//@include guide();
+	margin-left: 120px;
+	h2{
+		margin: $phi/2*1em 0 0 0;
+	}
+	p{
+		margin: 0 0 $phi/2*1em 0;
+		color: $color__link;
+	}
+}
+
+.top-navigation-container{
+	position: relative;
+	@include clearfix;
+	float:right;
+
+	
+
+	.top-navigation {
+		//clear: both;
+		display: block;
+		float: right;
+		//width: 100%;
+		//@include guide();
+		//margin-top: 48px;
+		margin-right: 120px;
+		background-color: $color__top-navigation;
+
+		ul {
+			//display: none;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+
+			li:hover > ul,
+			li.focus > ul {
+				left: auto;
+			}
+
+			&:first-child{
+				padding-left: $phi*1em
+			}
+
+		}
+		li {
+			float: left;
+			position: relative;
+
+			&:hover > a,
+			&.focus > a {
+			}
+
+			padding-right: $phi*1em;
+			//padding-bottom: $phi/2*1em;
+			//padding-top: $phi*1em;
+
+			ul{
+				display: none;
+			}
+		}
+		a {
+			display: block;
+			text-decoration: none;
+
+			//top navigation font color
+			color:$color__top-navigation-link;
+			font-weight: 600;
+
+			&:hover, &:focus{
+				color: #ed8b00;
+			}
+		}
+
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+		}
+
+		//adding background color to the right margin
+		&:before {
+			background: $color__top-navigation;
+			content: "";
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 40%;
+		}
+
+
+	}
+	
+
+}

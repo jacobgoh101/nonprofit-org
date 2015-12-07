@@ -163,10 +163,20 @@ function enqueue_styles_scripts() {
 	wp_enqueue_style('gfonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600');
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
+	//for responsive navigation
 	wp_enqueue_script( 'nonprofit-org-mobile-navigation', get_template_directory_uri() . '/js/navigation-custom.js', array('jquery'), '20120206', true );
-	
+
 	//wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js' );
 	//wp_enqueue_script( 'REM-unit-polyfill', get_template_directory_uri() . '/js/rem.js', false, false, true );
 } 
 
 add_action('wp_enqueue_scripts', 'enqueue_styles_scripts');
+
+function nonprofit_org_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Newsletter', 'nonprofit-org' ),
+		'id'            => 'footer-newsletter',
+		'description'   => 'mailpoet newsletter subscribe area in footer',
+	) );
+}
+add_action( 'widgets_init', 'nonprofit_org_widgets_init' );

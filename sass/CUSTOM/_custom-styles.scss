@@ -7,6 +7,11 @@ body {
 	@include body();
 }
 
+.site-content{
+	width: 1024*$px;
+	margin-left: auto;
+	margin-right: auto;
+}
 @include links();
 
 // Overridden from lists.scss
@@ -24,8 +29,8 @@ ul, ol {
 	float: left;
 	display: block;
 	//@include guide();
-	margin-left: 3%;
-	h2{
+	margin-left: 5%;
+	h3{
 		margin: $phi/2*1em 0 0 0;
 	}
 	p{
@@ -45,7 +50,125 @@ ul, ol {
 	.navicon{
 		clear: both;
 		float:none;
-		text-align: center;
-		
+		text-align: center;		
 	}
 }
+
+ /* Footer  */
+ .footer-logo{
+ 	background-color:  #bfb8af;
+ 	text-align: center;
+ 	a{
+ 		img{
+ 			margin: $phi*1em;
+ 			&:hover{
+ 				opacity: 0.5;
+ 			}
+ 		}
+ 	}
+ }
+
+ .footer-content{
+ 	@include clearfix;
+ 	text-align: center;
+ 	background-color: #546223;
+ 	color: WHITE;
+ 	width: 100%;
+ 	li{
+ 		list-style: none;
+ 	}
+ 	.footer-newsletter{
+ 		input, p{
+ 			display: inline-block !important;
+ 		}
+ 		input{
+ 			margin: $phi*1em $phi*1em 0 $phi*1em !important;
+
+ 			font-size: 16*$px;
+ 		}
+ 		h2{
+ 			font-size: 16*$px;
+ 			padding-top: $phi*1em;
+ 			margin-top: 0;
+ 			color: white;
+ 		}
+ 	}
+
+ 	hr{
+ 		padding: 0;
+ 		border: none;
+ 		border-top: medium double #333;
+ 		color: #333;
+ 		text-align: center;
+ 		margin: $phi*1em $phi*1em $phi*$phi*1em;
+ 		&:after{
+ 			content: "\f08a";
+ 			font-family: FontAwesome;
+ 			display: inline-block;
+ 			position: relative;
+ 			top: -0.7em;
+ 			font-size: 1.5em;
+ 			padding: 0 0.25em;
+ 			background: #546223;
+ 			color: white;
+ 		}
+ 	}
+
+ 	.footer-company-information-and-social-media{
+ 		@include clearfix;
+ 		width: 80%;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		margin-bottom: $phi*1em;
+ 		.footer-company-information{
+ 			@include span-columns(6);
+ 			text-align: right;
+ 			@include media(max-width 640px){
+ 				@include span-columns(12);
+ 				text-align: center;
+ 			}
+ 			a{
+ 				color: $color__link-hover;
+ 				font-weight: 600;
+ 				&:hover,&:focus{
+ 					color: white;
+ 				}
+ 			}
+ 		}
+
+ 		.footer-social-media{
+ 			@include span-columns(6);
+ 			text-align: left;
+ 			@include media(max-width 640px){
+ 				@include span-columns(12);
+ 				text-align: center;
+ 				margin-top: $phi*1em;
+ 			}
+ 			a{
+ 				color:$color__link-hover;
+ 				&:hover,&:focus{
+ 					color: darken(#546223,5%)
+ 				}
+ 				i{
+ 					font-size: 32*$px;
+ 					padding: $phi*10px;
+ 					padding-top: 0;
+ 				}
+ 			}
+ 		}
+ 	}
+ }
+
+
+ .site-info{
+ 	background-color: darken(#546223,10%);
+ 	color: white;
+ 	padding: $phi*1em;
+ 	a{
+ 		color: $color__link-hover;
+ 		&:hover,&:focus{
+ 			color: darken(white,20%);
+ 		}
+ 	}
+ 	text-align: center;
+ }

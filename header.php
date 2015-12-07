@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="site-branding">
-				<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+				<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
 
 				<?php
 				$description = get_bloginfo( 'description', 'display' );

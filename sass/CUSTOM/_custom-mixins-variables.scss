@@ -11,6 +11,8 @@ $phi: 1.618;
 $base_font_size: 16;
 $px: ( 1 / $base_font_size ) * 1rem;
 
+$menu_breakpoint: 1025*$px;
+
 //Default Typography Variables
 $font__main: 'Open Sans', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

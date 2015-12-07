@@ -46,6 +46,7 @@ function nonprofit_org_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'nonprofit-org' ),
 		'top-menu' => esc_html__( 'Top Menu', 'nonprofit-org' ),
+		'mobile-menu' => esc_html__( 'Mobile Menu', 'nonprofit-org' ),
 	) );
 
 	/*
@@ -117,7 +118,7 @@ add_action( 'widgets_init', 'nonprofit_org_widgets_init' );*/
 function nonprofit_org_scripts() {
 	wp_enqueue_style( 'nonprofit-org-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'nonprofit-org-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	//wp_enqueue_script( 'nonprofit-org-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'nonprofit-org-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -157,10 +158,15 @@ require get_template_directory() . '/inc/jetpack.php';
  * Custom Code starts here
  */
 
-//Add google fonts
-function add_google_fonts() {
+//Add fonts and script
+function enqueue_styles_scripts() { 
+	wp_enqueue_style('gfonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600');
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
-wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600', false ); 
-}
+	wp_enqueue_script( 'nonprofit-org-mobile-navigation', get_template_directory_uri() . '/js/navigation-custom.js', array('jquery'), '20120206', true );
+	
+	//wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js' );
+	//wp_enqueue_script( 'REM-unit-polyfill', get_template_directory_uri() . '/js/rem.js', false, false, true );
+} 
 
-add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
+add_action('wp_enqueue_scripts', 'enqueue_styles_scripts');

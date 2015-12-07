@@ -42,9 +42,13 @@
 				endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'nonprofit-org' ); ?></button>
+			<nav id="site-navigation" class="main-navigation" role="navigation">		
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'depth' => 2 ) ); ?>
+			</nav><!-- #site-navigation -->
+
+			<div class="navicon closed"><i class="fa fa-navicon"></i></div>
+			<nav id="mobile-navigation" class="mobile-navigation" role="navigation">						
+				<?php wp_nav_menu( array( 'theme_location' => 'mobile-menu', 'menu_id' => 'mobile-menu', 'depth' => 2 ) ); ?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 

@@ -65,10 +65,6 @@ ul, ol {
 	}
 }
 
-@include media(max-width 640px) {
-	
-	
-}
 
 .donate-now-link{
 	@include clearfix;
@@ -146,15 +142,6 @@ ul, ol {
 	}
 }
 
-/* @include media(max-width 640px) {
-	.donate-now-link{
-		height: 100px;
-		width: 100px;
-		h3{
-			font-size: 1em;
-		}
-	}
-} */
  /* Footer  */
  .footer-logo{
  	background-color:  #bfb8af;
@@ -282,9 +269,6 @@ ul, ol {
  	min-height: 90vh;
  	position: relative;
  	@include clearfix;
-/*  	@include media(max-width $menu_breakpoint) {
- 		margin-top: -$phi*1em;
- 	} */
 
  	.hero-image-text{
  		text-align: left;
@@ -297,15 +281,81 @@ ul, ol {
  		}
  		h2{
  			a{
- 				/* position: absolute;
- 				bottom:0;
- 				left: 5%; */
- 				/* max-width: 50%; */
  				color: white;
  				text-shadow: 2px 2px 4px #333;
  				&:hover, &:focus {
  					color: $color__link-hover;
  				}
+ 			}
+ 		}
+ 	}
+ }
+
+ .bar-under-hero-image{
+ 	@include clearfix;
+ 	background-color: #ed8b00;
+ 	width: 100%;
+ 	height:100%;
+ 	text-transform: uppercase;
+ 	text-align: center;
+ 	.wrap{
+ 		@include clearfix;
+ 		min-width: 80%;
+ 		margin: 0 auto;
+ 		height:100%;
+ 		a{
+ 			color: white;	
+ 			div{
+ 				height:100%;
+ 				h3{
+ 					margin-top: 0;
+ 					padding-top: $phi*0.5em;
+ 				} 	
+ 				&:hover{
+ 					background-color: darken(#ed8b00,5%);
+ 				}
+ 			}
+ 			@include media(min-width 840px) {
+ 				#bar-under-hero-image-button-1, #bar-under-hero-image-button-3{
+ 					@include span-columns(3.5);
+ 					border-left: 1px solid rgba(255,255,255,0.3);
+ 				}
+ 				#bar-under-hero-image-button-2{
+ 					@include span-columns(5);
+ 					border-left: 1px solid rgba(255,255,255,0.3);
+ 				}
+ 				#bar-under-hero-image-button-3{
+ 					border-right: 1px solid rgba(255,255,255,0.3);
+ 				}
+ 			}
+ 			@include media(max-width 840px) {
+ 				#bar-under-hero-image-button-1,#bar-under-hero-image-button-2{
+ 					border-bottom: 1px solid rgba(255,255,255,0.3);
+ 				}
+ 			}
+ 		}
+ 	}
+ }
+
+ .our-vision{
+ 	text-align: center;
+ 	max-width: 70%;
+ 	@include media(max-width 840px){
+ 		max-width: 80%;
+ 	}
+ 	margin: $phi*$phi*$phi*1em auto;
+ 	h2{
+ 		max-width: 90%;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+ 	a{
+ 		@include button();
+ 		margin: $phi*1em;
+ 		@include media(max-width 640px) {
+ 			display: inline-block;
+ 			&:last-child{
+ 				margin-bottom: 0;
  			}
  		}
  	}

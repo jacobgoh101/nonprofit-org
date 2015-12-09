@@ -70,7 +70,7 @@ $color__text-input-focus: #111;
 $color__link: #546223;
 $color__link-visited: #546223;
 $color__link-hover:#ed8b00;
-$color__text-main: #404040;
+$color__text-main: #6e6259;//#404040;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -103,4 +103,18 @@ $color__top-navigation-link-hover:#ed8b00;
 //temp color guide
 @mixin guide(){
 	background-color: lighten(black,80%);
+}
+
+//Button
+@mixin button($color-button:#ed8b00){
+	border-radius: 5px;
+	color: #ffffff;
+	background: $color-button;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+
+	&:hover {
+		background: darken($color-button,5%);
+		text-decoration: none;
+	}
 }

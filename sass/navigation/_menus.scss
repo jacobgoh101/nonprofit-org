@@ -4,6 +4,7 @@
 	float: right;
 	margin-top: 60px;
 	margin-right: 120px;
+	text-transform: uppercase;
 
 	//first level main menu
 	ul {
@@ -183,6 +184,7 @@
 	.mobile-navigation{
 		display: inline-table;
 		float:right;
+		//margin-top: 50px;
 
 		ul{
 			display: none;
@@ -191,6 +193,7 @@
 			padding-left: 0;
 			margin-left: 0;
 			max-width: 100vw;
+			margin-bottom: 0.809em;
 			li{
 				padding: $phi*0.5em 0 $phi*0.5em 0;
 				margin: 0;
@@ -206,6 +209,9 @@
 						color:#546223;
 					}				
 				}
+				&:last-child{
+					padding-bottom: 0;
+				}
 			}
 			li.menu-item-has-children{				
 				width: 100%;
@@ -215,6 +221,7 @@
 					padding-left: 0;
 					margin-left: 0;
 					padding-top: $phi*0.5em;
+					margin-bottom: 0;
 					li{
 						padding-left: 0;
 						margin-left: 0;

@@ -12,7 +12,8 @@ jQuery(document).ready(function($){
       $('.navicon .fa').addClass('fa-times');
 
       // show the menu
-      $('.mobile-navigation ul').css({"display":"block"});
+      $('.mobile-navigation ul').css({"display":"block","margin-top":"50px"});
+      $('.mobile-navigation ul ul').css({"display":"block","margin-top":"0"});
       $('.mobile-navigation ul ul').css({"display":"none"}); //prevent lower level menu to open
     } 
     // if mobile menu is already open

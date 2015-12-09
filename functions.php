@@ -144,7 +144,7 @@ require get_template_directory() . '/inc/jetpack.php';
 //Add fonts and script
 function enqueue_styles_scripts() { 
 	wp_enqueue_style('gfonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600');
-	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
 	//for responsive navigation
 	wp_enqueue_script( 'nonprofit-org-mobile-navigation', get_template_directory_uri() . '/js/navigation-custom.js', array('jquery'), '20120206', true );

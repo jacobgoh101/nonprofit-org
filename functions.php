@@ -47,7 +47,7 @@ function nonprofit_org_setup() {
 		'primary' => esc_html__( 'Primary', 'nonprofit-org' ),
 		'top-menu' => esc_html__( 'Top Menu', 'nonprofit-org' ),
 		'mobile-menu' => esc_html__( 'Mobile Menu', 'nonprofit-org' ),
-	) );
+		) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -59,7 +59,7 @@ function nonprofit_org_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
-	) );
+		) );
 
 	/*
 	 * Enable support for Post Formats.
@@ -71,13 +71,13 @@ function nonprofit_org_setup() {
 		'video',
 		'quote',
 		'link',
-	) );
+		) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'nonprofit_org_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+		) ) );
 }
 endif; // nonprofit_org_setup
 add_action( 'after_setup_theme', 'nonprofit_org_setup' );
@@ -160,7 +160,44 @@ function nonprofit_org_widgets_init() {
 		'name'          => esc_html__( 'Footer Newsletter', 'nonprofit-org' ),
 		'id'            => 'footer-newsletter',
 		'description'   => 'mailpoet newsletter subscribe area in footer',
-	) );
+		) );
 
 }
 add_action( 'widgets_init', 'nonprofit_org_widgets_init' );
+
+//create custom post type Story
+function create_post_type_story() {
+	// set up labels
+	$labels = array(
+		'name' => 'Stories',
+		'singular_name' => 'Story',
+		'add_new' => 'Add New Story',
+		'add_new_item' => 'Add New Story',
+		'edit_item' => 'Edit Story',
+		'new_item' => 'New Story',
+		'all_items' => 'All Stories',
+		'view_item' => 'View Story',
+		'search_items' => 'Search Stories',
+		'not_found' =>  'No Stories Found',
+		'not_found_in_trash' => 'No Stories found in Trash', 
+		'parent_item_colon' => '',
+		'menu_name' => 'Stories',
+		);
+    //register post type
+	register_post_type( 'Story', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail','page-attributes' ),
+		'taxonomies' => array(  ),	
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'Stories' ),
+		)
+	);
+
+}
+add_action( 'init', 'create_post_type_story' );
+
+//hide admin bar on front end
+//show_admin_bar( false );

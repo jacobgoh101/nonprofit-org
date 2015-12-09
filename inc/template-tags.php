@@ -25,12 +25,14 @@ function nonprofit_org_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'nonprofit-org' ),
+		//esc_html_x( 'Posted on %s', 'post date', 'nonprofit-org' ),
+		esc_html_x( '%s', 'post date', 'nonprofit-org' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'nonprofit-org' ),
+		//esc_html_x( 'by %s', 'post author', 'nonprofit-org' ),
+		esc_html_x( '%s', 'post author', 'nonprofit-org' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

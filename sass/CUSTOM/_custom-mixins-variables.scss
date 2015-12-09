@@ -106,7 +106,7 @@ $color__top-navigation-link-hover:#ed8b00;
 }
 
 //Button
-@mixin button($color-button:#ed8b00){
+@mixin button($color-button:$color__link-hover,$color-button-hover:darken($color__link,5%)){
 	border-radius: 5px;
 	color: #ffffff;
 	background: $color-button;
@@ -114,7 +114,7 @@ $color__top-navigation-link-hover:#ed8b00;
 	text-decoration: none;
 
 	&:hover {
-		background: darken($color-button,5%);
+		background: $color-button-hover;
 		text-decoration: none;
 	}
 }

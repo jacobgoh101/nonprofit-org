@@ -21,8 +21,8 @@
 			top: 1.5em;
 			left: -999em;
 			z-index: 99999;
-			background-color: #E6E6E6;
-			margin-top: $phi *10*$px;
+			background-color: #ebe7e3 ;
+			margin-top: $phi*0.1em;
 
 			a {
 				width: 150px;
@@ -38,6 +38,7 @@
 			}
 
 			li{
+				padding: $phi*0.2em 0;
 				&:hover,
 				&:focus{
 					border:none;

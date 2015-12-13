@@ -188,7 +188,7 @@ function create_post_type_story() {
 		'labels' => $labels,
 		'has_archive' => true,
 		'public' => true,
-		'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail','page-attributes' ),
+		'supports' => array( 'title', 'editor', 'excerpt'),
 		'taxonomies' => array(  ),	
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
@@ -201,3 +201,10 @@ add_action( 'init', 'create_post_type_story' );
 
 //hide admin bar on front end
 //show_admin_bar( false );
+
+// see what template you are using at footer
+add_action( 'admin_bar_menu', 'show_template' );
+function show_template() {
+	global $template;
+	print_r( $template );
+}

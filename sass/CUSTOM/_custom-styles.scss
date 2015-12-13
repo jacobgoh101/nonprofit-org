@@ -283,7 +283,7 @@ ul, ol {
  }
 
 //Blog Page styling
-.post{
+.post,.story{
 	.entry-header{
 		text-align: center;		
 		.entry-meta{
@@ -375,6 +375,194 @@ div#comments{
 .entry-header{
 	text-align: center;
 }
+
+// Story Custom Post Styling
+.story{
+	.entry-header{
+		img.story-hero{
+			width: 100%;
+		}
+		.story-details{
+			background-color: #ebe7e3;
+			width: 100%;
+			span{
+				margin: 0.25em*$phi 1em*$phi;
+				display: inline-block;
+				&:before{
+					content: "\f08a";
+					font-family: FontAwesome;
+					margin-right: 0.125em*$phi;
+				}
+			}
+		}
+	}
+}
+
+// Story archive styling
+hr.separator{
+	padding: 0;
+	border: none;
+	//border-top: medium double #333;
+	color: #546223;
+	text-align: center;
+	margin: $phi*$phi*$phi*1em 0;
+	&:after{
+		content: "\f08a";
+		font-family: FontAwesome;
+		display: inline-block;
+		position: relative;
+		top: -0.7em;
+		font-size: 1.5em;
+		padding: 0 0.25em;
+		background: white;
+		color: #546223;
+	}
+
+}
+
+.side-image {  
+	$base-line-height: 1.5em !default;
+	$action-color: #477DCA !default;
+	$large-screen: em(860) !default;
+	$base-font-color: white !default;
+	$side-image-content-background: #546223;
+
+	background: $side-image-content-background;
+
+	@include media($large-screen) {
+		@include row(table);
+	}
+
+	.images-wrapper {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: transparent;
+		background-size: cover;
+		display: block;
+		min-height: 400px;
+		padding: 3em;
+
+		@include media($large-screen) {
+			@include span-columns(4);
+			background-position: bottom;
+			background-size: cover;
+		}
+	}
+
+	.side-image-content {
+		@include span-columns(12);
+		padding: $phi*1em;
+
+		@include media($large-screen) {
+			@include span-columns(8);
+			padding: $phi*1em;
+		}
+
+		h1 {
+			//margin-bottom: 0.9em;
+			color: white;
+		}
+
+		h4 {
+			border: 1px solid white;
+			color: white;
+			display: inline-block;
+			font-size: 0.75em;
+			padding: 3px 8px;
+			text-transform: uppercase;
+		}
+
+		p {
+			color: $base-font-color;
+			line-height: $base-line-height;
+		}
+		a{
+			color: #ed8b00;
+			transition: all .5s ease;
+			text-transform: uppercase;
+			font-weight: 600;
+			&:hover{
+				color: white;
+			}
+		}
+	}
+
+	@include reset-display();
+}
+
+.archive-story, .ajax-load-more .alm-reveal{
+	@include clearfix;
+	.hover-tile-outer {
+		$base-border-color: transparent !default;
+		$base-line-height: 1.5em !default;
+		$hover-tile-height: 300px;
+		$base-spacing: 1.5em;	
+
+		background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
+		background-position: center;
+		background-size: cover;
+		cursor: pointer;
+		min-height: $hover-tile-height;
+		margin-bottom: $base-line-height;
+
+		@include span-columns(4);
+		@include media(max-width 1024px) {
+			@include span-columns(6);
+			&:nth-child(even){
+				margin-right: 0;
+			}		
+		}
+		@include media(max-width 690px) {
+			@include span-columns(12);
+		}
+
+
+		.hover-tile-container {
+			height: $hover-tile-height;
+			overflow: hidden;
+		}
+
+		.hover-tile-container:hover > .hover-tile {
+			@include transform(translate(0, -100%));
+			background: transparentize(#546223, 0.1);
+		}
+
+		.hover-tile {
+			@include transition(all, 0.2s ease-in-out);
+			background: inherit;
+			color: white;
+			height: inherit;
+			overflow: hidden;
+			padding: $base-spacing;
+			width: 100%;
+			@include transform(translate(0, -20%));
+		}
+
+		.hover-tile-hidden {
+			background: transparentize(#546223, 0);
+
+			p {
+				color: transparentize(#fff, 0.3);
+				line-height: $base-line-height;
+			}
+
+			h4 {
+				margin: 0 0 0.5em 0;
+			}
+		}
+	}
+}
+button#load-more{
+	font-family: $font__main;
+    background: $color__link-hover;
+    box-shadow: none;
+    text-shadow:none;
+    &:hover {
+		background: darken($color__link,5%);
+		text-decoration: none;
+	}
+}
+
 
  //Front-page
  .hero-image{

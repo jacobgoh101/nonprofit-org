@@ -55,6 +55,24 @@ $htag_vmargins: 0.563, 0.625, 1.313, 1.313, 1.313, 0.75;
 	}
 }
 
+//Maintain Aspect Ratio Mixin from CSS Tricks
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 //Default Colors Variables
 
 $color__background-body: #fff;

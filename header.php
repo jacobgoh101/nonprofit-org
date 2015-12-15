@@ -51,7 +51,7 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'mobile-menu', 'menu_id' => 'mobile-menu', 'depth' => 2 ) ); ?>
 			</nav><!-- #site-navigation -->
 
-			<a href="#" class="donate-now-link">
+			<a href="http://localhost/nonprofit-org/donations/save-the-kids/" class="donate-now-link">
 				<div class="donate-now">
 					<h3>Donate<br/><i class="fa fa-heart"></i> Now <i class="fa fa-heart"></i></h3>
 				</div>

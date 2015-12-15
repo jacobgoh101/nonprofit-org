@@ -15,9 +15,9 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="footer-logo">
-		<a href="#"><img alt="footer-logo-1" src="http://localhost/nonprofit-org/wp-content/themes/nonprofit-org/images/footer/footer-logo-1.png"></a>
-		<a href="#"><img alt="footer-logo-2" src="http://localhost/nonprofit-org/wp-content/themes/nonprofit-org/images/footer/footer-logo-2.png"></a>
-		<a href="#"><img alt="footer-logo-3" src="http://localhost/nonprofit-org/wp-content/themes/nonprofit-org/images/footer/footer-logo-3.png"></a>
+		<a href="#" onclick="return false;"><img alt="footer-logo-1" src="http://localhost/nonprofit-org/wp-content/themes/nonprofit-org/images/footer/footer-logo-1.png"></a>
+		<a href="#" onclick="return false;"><img alt="footer-logo-2" src="http://localhost/nonprofit-org/wp-content/themes/nonprofit-org/images/footer/footer-logo-2.png"></a>
+		<a href="#" onclick="return false;"><img alt="footer-logo-3" src="http://localhost/nonprofit-org/wp-content/themes/nonprofit-org/images/footer/footer-logo-3.png"></a>
 	</div>
 	<div class="footer-content">
 		<div class="footer-newsletter">
@@ -30,17 +30,17 @@
 
 		<div class="footer-company-information-and-social-media">
 			<div class="footer-company-information">
-				<a href="#">SITEMAP</a> | <a href="#">PRIVACY POLICY</a><br/>
+				<a href="http://localhost/nonprofit-org/sitemap/">SITEMAP</a> | <a href="#" onclick="return false;">PRIVACY POLICY</a><br/>
 				COPYRIGHT <?php echo date('Y') ?> NONPROFIT ORGANIZATION
 			</div>
 			<div class="footer-social-media">
-				<a href="#"><i class="fa fa-facebook-square"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-google-plus"></i></a>
-				<a href="#"><i class="fa fa-youtube"></i></a>
-				<a href="#"><i class="fa fa-rss"></i></a>
-				<a href="#"><i class="fa fa-instagram"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-facebook-square"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-twitter"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-google-plus"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-youtube"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-rss"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-instagram"></i></a>
+				<a href="#" onclick="return false;"><i class="fa fa-linkedin"></i></a>
 			</div>
 		</div>
 	</div>

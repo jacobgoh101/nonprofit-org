@@ -767,6 +767,9 @@ button#load-more{
  }
  div#carousel{
  	width: 80%;
+ 	@include media(max-width 800px) {
+ 		width: 100%;
+ 	}
  	margin: 0 auto;
  	flex-direction-nav{
  		@include clearfix;
@@ -781,12 +784,19 @@ button#load-more{
  .flex-direction-nav {
  	a:before{
  		margin-top: 6px;
+ 		color: white;
  	}
  	.flex-next{
  		right:-45px;
+ 		@include media(max-width 800px) {
+ 			display: none;
+ 		}
  	}
  	.flex-prev{
  		left:-45px;
+ 		@include media(max-width 800px) {
+ 			display: none;
+ 		}
  	}
  }
  .flexslider:hover .flex-direction-nav .flex-next{
@@ -795,3 +805,86 @@ button#load-more{
  .flexslider:hover .flex-direction-nav .flex-prev{
  	left: -45px;
  }
+
+ .ask-for-donation{
+ 	text-align: center;
+ 	margin-bottom: $phi*$phi*1em;
+ 	margin-top: $phi*1em;
+ 	.donation-amount-explained{
+ 		max-width: 1024px;
+ 		margin: 0 auto;
+ 		@include clearfix;
+ 		margin-bottom: $phi*1em;
+ 		div{
+ 			@include span-columns(4);
+ 			@include media(max-width 500px) {
+ 				@include span-columns(6);
+ 				&:nth-child(even){
+ 					margin-right: 0;
+ 				}
+ 				&:last-child{
+ 					float: none;
+ 					margin-right: auto;
+ 					margin-left: auto;
+ 					display: block;
+ 				}
+ 			}
+ 			@include media(max-width 400px) {
+ 				@include span-columns(12);
+ 			}
+ 			i{
+ 				font-size: $phi*$phi*1em;
+ 				color: $color__link-hover;
+ 			}
+ 			h2{
+ 				margin-bottom: 0.125em*$phi;
+ 			}
+ 		}
+ 	}
+ 	a{
+ 		@include button();
+ 	}
+ }
+
+ //donation page
+ div.give-wrap.container{
+ 	max-width: 1024px;
+ 	margin: 0 auto;
+ }
+ @include media(max-width 768px) {
+ 	div.give-wrap.container{
+ 		margin: 0 $phi*1em;
+ 	}
+ 	div#give-sidebar-left{
+ 		float: none !important; 
+ 		display: block;
+ 		margin: 0 auto;
+ 	}
+ 	h1.give-form-title.entry-title{
+ 		text-align: center;
+ 	}
+ }
+
+ //sitemap page
+ div#sitemap{
+ 	text-align: left;
+
+/*     -webkit-column-count: 3; 
+    -moz-column-count: 3; 
+    column-count: 3; */
+
+    -webkit-column-gap: $phi*$phi*1em; 
+    -moz-column-gap: $phi*$phi*1em; 
+    column-gap: $phi*$phi*1em;
+
+    /* @include media(max-width 900px) { */
+		-webkit-column-count: 2; 
+	    -moz-column-count: 2; 
+	    column-count: 2;
+	/* } */
+	@include media(max-width 600px) {
+		-webkit-column-count: 1; 
+	    -moz-column-count: 1; 
+	    column-count: 1;
+	}
+}

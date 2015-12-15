@@ -4,6 +4,7 @@
 function enqueue_flexslider_styles_scripts() { 
 	wp_enqueue_style('flexslider-css', get_template_directory_uri() . '/woothemes-FlexSlider-9a419a0/flexslider.css');
 	wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/woothemes-FlexSlider-9a419a0/jquery.flexslider-min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'front-page-flexslider-js', get_template_directory_uri() . '/js/front-page-flexslider.js', array('jquery'), null, true );
 } 
 
 add_action('wp_enqueue_scripts', 'enqueue_flexslider_styles_scripts',1);
@@ -16,24 +17,24 @@ get_header();
 
 <div class="hero-image">
 	<div class="hero-image-text">
-		<h2><a href="#">We believe that no kids should ever have to live in hunger. Help save them.</a></h2>
+		<h2><a href="#" onclick="return false;">We believe that no kids should ever have to live in hunger. Help save them.</a></h2>
 	</div>
 </div>
 <div class="bar-under-hero-image">
 	<div class="wrap">
-		<a href="#">
+		<a href="#" onclick="return false;">
 			<div id="bar-under-hero-image-button-1">
 				<h3>I'm Hungry</h3>
 				<h4>Find Food <i class="fa fa-cutlery"></i></h4>
 			</div>
 		</a>
-		<a href="#">
+		<a href="#" onclick="return false;">
 			<div id="bar-under-hero-image-button-2">
 				<h3>I want to participate</h3>
 				<h4>Volunteer <i class="fa fa-hand-paper-o"></i></h4>
 			</div>
 		</a>
-		<a href="#">
+		<a href="http://localhost/nonprofit-org/donations/save-the-kids/">
 			<div id="bar-under-hero-image-button-3">
 				<h3>I want to help</h3>
 				<h4>Donate <i class="fa fa-credit-card"></i></h4>
@@ -44,8 +45,8 @@ get_header();
 <div class="our-vision">
 	<h2>Our vision is to end hunger in Gotham City.</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quod quidem nobis non saepe contingit. Si longus, levis; Beatus sibi videtur esse moriens. Hoc non est positum in nostra actione. Duo Reges: constructio interrete. Sed ad bona praeterita redeamus.</p>
-	<a href="#">Where we have been</a>
-	<a href="#">Where are we going</a>
+	<a href="#" onclick="return false;">Where we have been</a>
+	<a href="#" onclick="return false;">Where are we going</a>
 </div>
 
 <!-- Flex Slider -->
@@ -92,36 +93,31 @@ if ( $the_query1->have_posts() ) {
 }
 /* Restore original Post Data */
 wp_reset_postdata();
-echo '</div>'
+echo '</div>';
 ?>
 
-
-<script>
-	(function($) {
-		$(window).load(function() {
-  			// The slider being synced must be initialized first
-  			$('#carousel').flexslider({
-  				animation: "slide",
-  				controlNav: false,
-  				animationLoop: true,
-  				slideshow: false,
-  				itemWidth: 150,
-  				itemMargin: 5,
-  				asNavFor: '#slider'
-  			});
-
-  			$('#slider').flexslider({
-  				animation: "slide",
-  				controlNav: false,
-  				animationLoop: false,
-  				slideshow: false,
-  				sync: "#carousel"
-  			});
-  		});
-
-	})( jQuery );
-
-</script>
+<!-- Ask for donation section -->
+<div class="ask-for-donation">
+	<h1>A Little Bit Goes A Long Way</h1>
+	<div class="donation-amount-explained">
+		<div id="donation-amount-explained-100">
+			<i class="fa fa-cutlery"></i>
+			<h2>$100</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+		<div id="donation-amount-explained-300">
+			<i class="fa fa-shopping-basket"></i>
+			<h2>$300</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+		<div id="donation-amount-explained-500">
+			<i class="fa fa-medkit"></i>
+			<h2>$500</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+	</div>
+	<a href="http://localhost/nonprofit-org/donations/save-the-kids/">DONATE NOW</a>
+</div>
 
 <?php
 
